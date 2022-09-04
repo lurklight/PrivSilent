@@ -1,8 +1,6 @@
 if not game:IsLoaded() then
 game.Loaded:Wait()
 end
-
-
 -- // Dependencies
 _G.PRED = 0.037
 local Aiming = loadstring(game:HttpGet("https://raw.githubusercontent.com/lurklight/PrivSilent/main/LocalAiming"))()
@@ -91,4 +89,22 @@ RunService.RenderStepped:Connect(function()
     local pingValue = Value:split(" ")
     local PingNumber = pingValue[1]
     DaHoodSettings.Prediction = PingNumber / 1000 + _G.PRED
+end)
+
+
+
+
+local KeybindForToggle = "a" -- toggle key
+local mouse = game.Players.LocalPlayer:GetMouse()
+
+
+
+mouse.KeyDown:Connect(function(value)
+if value == KeybindForToggle then
+if DaHoodSettings.SilentAim == true then
+    DaHoodSettings.SilentAim = false
+else
+    DaHoodSettings.SilentAim = true
+end
+end
 end)
