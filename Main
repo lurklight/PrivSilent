@@ -94,7 +94,7 @@ end)
 
 
 
-local KeybindForToggle = "a" -- toggle key
+local KeybindForToggle = "q" -- toggle key
 local mouse = game.Players.LocalPlayer:GetMouse()
 
 
